@@ -1,0 +1,42 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+  }
+  
+  /* Estilos para el scrolling horizontal en 1440px */
+  @media (min-width: 1440px) {
+    #task-columns {
+      overflow-x: auto;
+      white-space: nowrap; /* Evita el ajuste de línea en las columnas */
+    }
+  }
+  
+  /* Estilos para el wrap en 768px */
+  @media (max-width: 768px) {
+    #task-columns {
+      flex-wrap: wrap;
+    }
+  }
+  
+  /* Estilos para el scrolling vertical en 425px */
+  @media (max-width: 425px) {
+    #task-columns {
+      overflow-y: auto;
+    }
+  
+    #new-task-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+  
+  /* Estilos para el scrolling dentro de las columnas */
+  .column {
+    max-height: 400px; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto;
+  }
+
+  .task-card:hover {
+    cursor: pointer;
+  }
