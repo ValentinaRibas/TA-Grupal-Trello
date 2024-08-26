@@ -1,0 +1,12 @@
+.modal-card {
+    max-width: 500px;
+    width: 100%;
+}
+
+.dropdown, .dropdown-trigger, .dropdown-trigger .button {
+    width: 100%;
+}
+
+.dropdown-trigger .icon.is-small {
+    display: none;
+}
