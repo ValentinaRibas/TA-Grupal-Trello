@@ -1,3 +1,44 @@
+//Ejemplo sin datos
+localStorage.setItem('inner-title', 'Título 1');
+localStorage.setItem('inner-description', 'Descripción 1');
+localStorage.setItem('assigned-to', 'Persona 1');
+localStorage.setItem('priority', 'Media');
+localStorage.setItem('state', 'Backlog');
+localStorage.setItem('date', '01/08/2024');
+
+var titleElement = document.getElementById("task-title");
+var innerDescriptionElement = document.getElementById("task-description");
+var assignedToElement = document.getElementById("task-assigned");
+var priorityElement = document.getElementById("task-priority");
+var stateElement = document.getElementById("task-status");
+var dateElement = document.getElementById("task-date");
+
+const title = localStorage.getItem('inner-title');
+const innerDescription = localStorage.getItem('inner-description');
+const assignedTo = localStorage.getItem('assigned-to');
+const prioryty = localStorage.getItem('priority');
+const state = localStorage.getItem('state');
+const date = localStorage.getItem('date');
+
+if (title){
+    titleElement.value = title;
+}
+if (innerDescription){
+    innerDescriptionElement.value = innerDescription;
+}
+if (assignedTo){
+    assignedToElement.textContent = assignedTo;
+}
+if (prioryty){
+    priorityElement.textContent = prioryty;
+}
+if (state){
+    stateElement.textContent = state;
+}
+if (date){
+    dateElement.value = date;
+}
+
 /**
  * Function to handle the task card modal
  */
