@@ -1,5 +1,7 @@
-@media screen and (max-width: 425px) {
-    #title{
-        text-align: center;
-    }
+body{
+    max-width: 50%;
+}
+
+#title{
+    text-align: center;
 }
