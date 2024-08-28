@@ -15,102 +15,122 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Detalles de la tarea</p>
+                <p class="modal-card-title">Nueva Tarea</p>
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <form id="task-form">
-                    <div class="field">
-                        <label class="label">Título</label>
-                        <div class="control">
-                            <input id="task-title" class="input" type="text" placeholder="Task Title" name="title" required>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Descripción</label>
-                        <div class="control">
-                            <textarea id="task-description" class="textarea" placeholder="Task Description" name="description"></textarea>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Asignado a</label>
-                        <div class="control">
-                            <div class="dropdown">
-                                <div class="dropdown-trigger">
-                                    <button id="task-assigned" class="button" type="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                        <span>Seleccionar persona</span>
-                                        <span class="icon is-small">
-                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                        </span>
-                                    </button>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Título</label>
+                                <div class="control">
+                                    <input id="task-title" class="input" type="text" name="title" required>
                                 </div>
-                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item">Persona 1</a>
-                                        <a href="#" class="dropdown-item">Persona 2</a>
-                                        <a href="#" class="dropdown-item">Persona 3</a>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Descripción</label>
+                                <div class="control">
+                                    <input id="task-description" class="input" type="text" name="description">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Asignado a</label>
+                                <div class="control">
+                                    <div class="dropdown">
+                                        <div class="dropdown-trigger">
+                                            <button id="task-assigned" class="button" type="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                                <span>Seleccionar persona</span>
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="#" class="dropdown-item">Persona 1</a>
+                                                <a href="#" class="dropdown-item">Persona 2</a>
+                                                <a href="#" class="dropdown-item">Persona 3</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Prioridad</label>
+                                <div class="control">
+                                    <div class="dropdown">
+                                        <div class="dropdown-trigger">
+                                            <button id="task-priority" class="button" type="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                                                <span>Seleccionar prioridad</span>
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="#" class="dropdown-item">Alta</a>
+                                                <a href="#" class="dropdown-item">Media</a>
+                                                <a href="#" class="dropdown-item">Baja</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field">
-                        <label class="label">Prioridad</label>
-                        <div class="control">
-                            <div class="dropdown">
-                                <div class="dropdown-trigger">
-                                    <button id="task-priority" class="button" type="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-                                        <span>Seleccionar prioridad</span>
-                                        <span class="icon is-small">
-                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item">Alta</a>
-                                        <a href="#" class="dropdown-item">Media</a>
-                                        <a href="#" class="dropdown-item">Baja</a>
+                    
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Estado</label>
+                                <div class="control">
+                                    <div class="dropdown">
+                                        <div class="dropdown-trigger">
+                                            <button id="task-status" class="button" type="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                                                <span>Seleccionar estado</span>
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                                            <div class="dropdown-content">
+                                                <a href="#" class="dropdown-item">Backlog</a>
+                                                <a href="#" class="dropdown-item">To Do</a>
+                                                <a href="#" class="dropdown-item">In Progress</a>
+                                                <a href="#" class="dropdown-item">Blocked</a>
+                                                <a href="#" class="dropdown-item">Done</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Estado</label>
-                        <div class="control">
-                            <div class="dropdown">
-                                <div class="dropdown-trigger">
-                                    <button id="task-status" class="button" type="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                                        <span>Seleccionar estado</span>
-                                        <span class="icon is-small">
-                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                                    <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item">Backlog</a>
-                                        <a href="#" class="dropdown-item">To Do</a>
-                                        <a href="#" class="dropdown-item">In Progress</a>
-                                        <a href="#" class="dropdown-item">Blocked</a>
-                                        <a href="#" class="dropdown-item">Done</a>
-                                    </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Fecha límite</label>
+                                <div class="control">
+                                    <input id="task-date" class="input" type="date" name="date">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Fecha</label>
-                        <div class="control">
-                            <input id="task-date" class="input" type="date" name="date">
                         </div>
                     </div>
                 </form>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" id="save-button">Guardar</button>
                 <button class="button" id="cancel-button">Cancelar</button>
+                <button class="button is-success" id="save-button">Aceptar</button>
             </footer>
         </div>
     </div>
