@@ -4,7 +4,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var showModal = document.getElementById("show-modal");
     var modal = document.getElementById("task-modal");
-    var closeModal = document.querySelector(".delete");
     var cancelButton = document.getElementById("cancel-button");
     var saveButton = document.getElementById("save-button");
 
@@ -14,13 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showModal.addEventListener("click", function () {
         modal.classList.add("is-active");
         loadTaskData();
-    });
-
-    /**
-     * This event listener is used to close the modal when the user clicks on the "X" button
-     */
-    closeModal.addEventListener("click", function () {
-        modal.classList.remove("is-active");
     });
 
     /**

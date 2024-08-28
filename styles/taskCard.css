@@ -1,5 +1,5 @@
 .modal-card {
-    max-width: 500px;
+    max-width: 50%;
     width: 100%;
 }
 
@@ -9,4 +9,15 @@
 
 .dropdown-trigger .icon.is-small {
     display: none;
+}
+
+.modal-card-head .modal-card-title {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-card-foot {
+    display: flex;
+    justify-content: center;
 }
