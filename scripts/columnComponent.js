@@ -12,6 +12,6 @@ const title = localStorage.getItem('title');
 const innerTitle = localStorage.getItem('inner-title');
 const innerDescription = localStorage.getItem('inner-description');
 
-titleElement.innerHTML = title;
-innerTitleElement.innerHTML = innerTitle;
-innerDescriptionElement.innerHTML = innerDescription;
+// titleElement.innerHTML = title;
+// innerTitleElement.innerHTML = innerTitle;
+// innerDescriptionElement.innerHTML = innerDescription;

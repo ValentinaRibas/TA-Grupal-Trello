@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <link rel="stylesheet" href="mainView.css">
+    <link href="columnComponent.html">
+    <link rel="stylesheet" href="../styles/columnComponent.css">
+</head>
+<body class="is-flex is-justify-content-center is-align-items-center" style=" height: 100vh; flex-direction: column;">
+    <div style="padding-bottom: 50px;">
+        <h1 style="font-size: 200%;">GESTOR DE TAREAS</h1>
+    </div>
+    <button class="button is-primary js-modal-trigger" data-target="mimodal" style="position: absolute;top: 0;right: 0;margin: 80px;">
+        Agregar tarea
+    </button>
+    <div class="columns" style="width: 100vw;">
+        <div class="column" id="columnContainer">
+            <p class="subtitle is-5 has-text-centered" id="title">Backlog</p>
+    
+            <div class="box" id="innerItem">
+                <p class="is-size-7" id="inner-title"></p>    
+                <p class="is-size-7" id="inner-description"></p>  
+            </div>
+        </div>
+        <div class="column" id="columnContainer">
+            <p class="subtitle is-5 has-text-centered" id="title">To do</p>
+    
+            <div class="box" id="innerItem">
+                <p class="is-size-7" id="inner-title"></p>    
+                <p class="is-size-7" id="inner-description"></p>  
+            </div>
+        </div>
+        <div class="column" id="columnContainer">
+            <p class="subtitle is-5 has-text-centered" id="title">In progress</p>
+
+            <div class="box" id="innerItem">
+                <p class="is-size-7" id="inner-title"></p>    
+                <p class="is-size-7" id="inner-description"></p>  
+            </div>
+        </div>
+        <div class="column" id="columnContainer">
+            <p class="subtitle is-5 has-text-centered" id="title">Blocked</p>
+    
+            <div class="box" id="innerItem">
+                <p class="is-size-7" id="inner-title"></p>    
+                <p class="is-size-7" id="inner-description"></p>  
+            </div>
+        </div>
+        <div class="column" id="columnContainer">
+            <p class="subtitle is-5 has-text-centered" id="title">Done</p>
+    
+            <div class="box" id="innerItem">
+                <p class="is-size-7" id="inner-title"></p>    
+                <p class="is-size-7" id="inner-description"></p>  
+            </div>
+        </div>
+        <!-- <div class="column customStyle">
+            <h1 class="tituloEstado">Backlog</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div> -->
+        <!-- <div class="column customStyle">
+            <h1 class="tituloEstado">To do</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">In progress</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">Blocked</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">Done</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div> -->
+        </div>
+    </div>
+</body>
+<script src="../scripts/columnComponent.js"></script>
+</html>
