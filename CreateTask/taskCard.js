@@ -22,9 +22,9 @@ const priorities = [
 ];
 
 const assignedTo = [
-  "Juan",
-  "María",
-  "Pedro"
+  "Persona 1",
+  "Persona 2",
+  "Persona 3"
 ];
 
 let tasks = []; // Array para almacenar las tareas
@@ -100,8 +100,6 @@ function openModal(title, task = null) {
   taskForm.appendChild(statusSelect);
   taskForm.appendChild(dueDateInput);
 
-  taskModal.classList.add('is-active');
-
   if (task) {
     const hiddenIdInput = document.createElement('input');
     hiddenIdInput.type = 'hidden';
@@ -155,6 +153,13 @@ function closeModal() {
 
 // Función para guardar/actualizar una tarea
 function saveTask() {
+  const titleInput = document.getElementById('title'); // Obtenemos el elemento del título
+
+  if (titleInput.value.trim() === '') { 
+    alert('No se puede guardar la tarea sin un título.');
+    return; // Detener el proceso de guardar
+  }
+
   const formData = new FormData(taskForm);
   const taskData = {};
   for (const pair of formData.entries()) {
