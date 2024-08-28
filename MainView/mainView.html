@@ -4,8 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\Andres Christoff\Downloads\bulma-1.0.2\bulma\css\bulma.min.css">
+    <link rel="stylesheet" href="mainView.css">
 </head>
-<body>
-    
+<body class="is-flex is-justify-content-center is-align-items-center" style=" height: 100vh; flex-direction: column; background-color: burlywood;">
+    <h1 style="font-size: 200%;">GESTOR DE TAREAS</h1>
+    <br>
+    <br>
+    <br>
+    <button class="button is-primary js-modal-trigger" data-target="mimodal" style="position: absolute;top: 0;right: 0;margin: 80px;">
+        Agregar tarea
+    </button>
+    <div class="modal" id="mimodal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            HOLA
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <div class="columns" style="width: 100vw;">
+        <div class="column customStyle">
+            <h1 class="tituloEstado">Backlog</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">To do</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">In progress</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">Blocked</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        <div class="column customStyle">
+            <h1 class="tituloEstado">Done</h1>
+            <ul class="curved-list">
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+                <li>
+                    <div>Titulo</div>
+                    <div>Descripcion</div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
