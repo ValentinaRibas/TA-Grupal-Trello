@@ -156,7 +156,7 @@ function saveTask() {
   const titleInput = document.getElementById('title'); // Obtenemos el elemento del título
 
   if (titleInput.value.trim() === '') { 
-    alert('No se puede guardar la tarea sin un título.');
+    alert('No se puede guardar la tarea sin un título');
     return; // Detener el proceso de guardar
   }
 
