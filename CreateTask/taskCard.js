@@ -27,14 +27,13 @@ const assignedTo = [
   "Persona 3"
 ];
 
-let tasks = []; // Array para almacenar las tareas
+let tasks = [];
 
-// Función para crear el HTML de una columna
 function createColumn(status) {
   const columnDiv = document.createElement('div');
-  columnDiv.classList.add('column', 'is-one-fifth'); // Ajusta el ancho de columna 
+  columnDiv.classList.add('column', 'is-one-fifth'); 
   columnDiv.innerHTML = `
-    <div class="card">
+    <div class="column">
       <header class="card-header">
         <p class="card-header-title">${status}</p>
       </header>
@@ -45,11 +44,10 @@ function createColumn(status) {
   return columnDiv;
 }
 
-// Función para crear el HTML de una tarea
 function createTaskElement(task) {
   const taskDiv = document.createElement('div');
   taskDiv.classList.add('card', 'mb-3', 'task-card');
-  taskDiv.dataset.taskId = task.id; // Agregar ID único a la tarjeta
+  taskDiv.dataset.taskId = task.id; 
   taskDiv.innerHTML = `
     <div class="card-content">
       <p class="title is-5">${task.title}</p>
@@ -59,7 +57,6 @@ function createTaskElement(task) {
   `;
 
   taskDiv.addEventListener('click', () => {
-    // Buscar la tarea en el array 'tasks' usando el ID
     const taskToEdit = tasks.find(t => t.id === task.id);
     openModal("Editar Tarea", taskToEdit); 
   });
@@ -81,7 +78,6 @@ function loadTasksToColumns() {
   });
 }
 
-// Función para abrir el modal
 function openModal(title, task = null) {
   modalTitle.textContent = title;
   taskForm.innerHTML = ""; 
@@ -145,19 +141,17 @@ function createSelect(id, labelText, options, selectedValue = "") {
   return fieldDiv;
 }
 
-// Función para cerrar el modal
 function closeModal() {
   taskModal.classList.remove('is-active');
   taskForm.reset();
 }
 
-// Función para guardar/actualizar una tarea
 function saveTask() {
-  const titleInput = document.getElementById('title'); // Obtenemos el elemento del título
+  const titleInput = document.getElementById('title'); 
 
   if (titleInput.value.trim() === '') { 
     alert('No se puede guardar la tarea sin un título');
-    return; // Detener el proceso de guardar
+    return; 
   }
 
   const formData = new FormData(taskForm);
@@ -167,12 +161,10 @@ function saveTask() {
   }
 
   if (taskData.id) {
-    // Actualizar tarea
     const taskIndex = tasks.findIndex(task => task.id === taskData.id);
     tasks[taskIndex] = taskData;
   } else {
-    // Nueva tarea
-    taskData.id = Date.now().toString(); // ID simple para la demostración
+    taskData.id = Date.now().toString(); 
     tasks.push(taskData);
   }
   const idInput = taskForm.querySelector('input[name="id"]');
@@ -184,18 +176,15 @@ function saveTask() {
   loadTasksToColumns(); 
 }
 
-// Inicialización: Crear columnas al cargar la página
 taskStatuses.forEach(status => {
   const column = createColumn(status);
   taskColumns.appendChild(column);
 });
 
-// Event Listeners
 newTaskButton.addEventListener('click', () => openModal("Nueva Tarea"));
 closeModalButton.addEventListener('click', closeModal);
 cancelModalButton.addEventListener('click', closeModal);
 saveTaskButton.addEventListener('click', saveTask);
 
-// Cargar tareas desde localStorage o inicializar el array
 loadTasksFromLocalStorage(); 
 loadTasksToColumns();
