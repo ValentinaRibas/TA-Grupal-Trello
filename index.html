@@ -6,7 +6,8 @@
   <title>Gestor de Tareas</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="taskCard.css"> 
+  <link rel="stylesheet" href="./styles/taskModal.css"> 
+  <link rel="stylesheet" href="./styles/kanbanColumns.css"> 
 </head>
 <body>
 
@@ -17,7 +18,7 @@
       <button class="button is-primary" id="new-task-button">Nueva Tarea</button>
 
       <div class="columns" id="task-columns">
-        </div>
+      </div>
     </div>
   </section>
 
@@ -30,7 +31,7 @@
       </header>
       <section class="modal-card-body">
         <form id="task-form">
-          </form>
+        </form>
       </section>
       <footer class="modal-card-foot">
         <button class="button" id="cancel-modal">Cancelar</button>
@@ -39,6 +40,6 @@
     </div>
   </div>
 
-  <script src="taskCard.js"></script>
+  <script type="module" src="./components/main.js"></script>
 </body>
 </html>

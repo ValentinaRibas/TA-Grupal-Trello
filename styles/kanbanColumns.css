@@ -1,0 +1,54 @@
+.task-card {
+    cursor: grab;
+    margin-top: 1rem;
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+.task-card .card-content {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.task-card .card-content .title {
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.task-card .card-content .subtitle {
+    margin: 0;
+    line-height: 1.2;
+    color: black;
+}
+
+.column[ondragover] {
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
+}
+
+.task-card .card-content p {
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.task-backlog {
+    background-color: #c8c8c8;
+}
+
+.task-todo {
+    background-color: #ffecb3;
+}
+
+.task-inprogress {
+    background-color: #74c9f1;
+}
+
+.task-blocked {
+    background-color: #f79494;
+}
+
+.task-done {
+    background-color: #a0f4a3;
+}

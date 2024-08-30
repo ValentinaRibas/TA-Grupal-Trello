@@ -1,0 +1,42 @@
+.modal-card-head {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.modal-card-head .delete {
+    display: none;
+}
+
+.modal-card-foot {
+    justify-content: center;
+}
+
+.modal-card-foot .button {
+    margin-left: 10px;
+}
+
+.modal-card {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.modal-card .field .control {
+    width: 100%;
+}
+
+.modal-card .field .control input,
+.modal-card .field .control select,
+.modal-card .field .control .select select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-card .field .control .select {
+    width: 100%;
+}
+
+.modal-card .field .control .select select {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+}
