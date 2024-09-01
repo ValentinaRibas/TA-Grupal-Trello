@@ -46,6 +46,12 @@ export class TaskColumns {
                 const taskElement = this.createTaskElement(task);
                 columnContent.appendChild(taskElement);
             });
+
+            if (columnContent.scrollHeight > columnContent.clientHeight) {
+                columnContent.parentElement.classList.add('scrollable');
+            } else {
+                columnContent.parentElement.classList.remove('scrollable');
+            }
         });
     }
 
