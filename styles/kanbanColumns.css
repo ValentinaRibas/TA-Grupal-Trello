@@ -1,3 +1,67 @@
+body {
+    background-color: #4e84a0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+#new-task-button {
+    background-color: #00d1b2;
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* position: absolute;
+    right: 20px;
+    top: 20px; */
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+}
+
+
+#task-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#task-columns .column .card-content {
+    background-color: inherit;
+    border-radius: 8px;
+}
+
+#task-columns .column {
+    margin-right: 10px;
+    flex: 1 1 16%;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 600px;
+}
+
+#task-columns .column .card-header-title {
+    font-weight: bold;
+    color: #333333;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.column[data-status="Backlog"],
+.column[data-status="To Do"],
+.column[data-status="In Progress"],
+.column[data-status="Blocked"],
+.column[data-status="Done"] {
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 600px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
 .task-card {
     cursor: grab;
     margin-top: 1rem;
@@ -5,32 +69,35 @@
 
 .task-card:active {
     cursor: grabbing;
+    border-radius: 0;
 }
 
 .task-card .card-content {
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 8px;
 }
 
 .task-card .card-content .title {
     margin-bottom: 0.5rem;
     color: black;
+    font-size: 0.9rem;
 }
 
 .task-card .card-content .subtitle {
     margin: 0;
     line-height: 1.2;
     color: black;
-}
-
-.column[ondragover] {
-    border: 2px dashed #ccc;
-    background-color: #f9f9f9;
+    font-size: 0.8rem;
 }
 
 .task-card .card-content p {
     margin-bottom: 0.25rem;
     line-height: 1.2;
+    font-size: 0.8rem;
+}
+
+.column[ondragover] {
+    border: 2px dashed #ccc;
 }
 
 .task-backlog {
@@ -38,11 +105,11 @@
 }
 
 .task-todo {
-    background-color: #ffecb3;
+    background-color: #f6da87;
 }
 
 .task-inprogress {
-    background-color: #74c9f1;
+    background-color: #4dbff4;
 }
 
 .task-blocked {
@@ -50,5 +117,31 @@
 }
 
 .task-done {
-    background-color: #a0f4a3;
+    background-color: #60d264;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+    #task-columns .column {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+
+    #task-columns .column:nth-child(4),
+    #task-columns .column:nth-child(5) {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    #task-columns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #task-columns .column {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
 }
