@@ -14,20 +14,22 @@
 
   <section class="section">
     <div class="container">
-      <div class="is-flex is-justify-content-space-between">
+      <div class="is-flex is-justify-content-space-between is-align-items-center">
         <h1 class="title">Gestor de Tareas</h1>
-        <div class="field">
-          <input type="checkbox" id="dark-mode-switch" class="dark-mode-switch">
-          <label for="dark-mode-switch">Dark Mode</label>
+        <div class="is-flex is-flex-direction-column is-align-items-flex-end">
+          <div class="field">
+            <input type="checkbox" id="dark-mode-switch" class="dark-mode-switch">
+            <label for="dark-mode-switch">Dark Mode</label>
+          </div>
+          <button class="button is-primary" id="new-task-button" style="margin-top: 1rem;">Agregar Tarea</button>
         </div>
       </div>
-
-      <button class="button is-primary" id="new-task-button">Agregar Tarea</button>
-
-      <div class="columns" id="task-columns">
+  
+      <div class="columns" id="task-columns" style="margin-top: 2rem;">
       </div>
     </div>
   </section>
+  
 
   <div class="modal" id="task-modal">
     <div class="modal-background"></div>
