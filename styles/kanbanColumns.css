@@ -1,0 +1,160 @@
+body {
+    background-color: #4e84a0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#new-task-button {
+    background-color: #00d1b2;
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* position: absolute;
+    right: 20px;
+    top: 20px; */
+}
+
+.container {
+    position: relative;
+}
+
+#task-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#task-columns .column {
+    flex: 1 1 16%;
+    border-radius: 15px;
+    height: 600px;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#task-columns .column .card-content {
+    background-color: inherit;
+    border-radius: 8px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#task-columns .column .card-content::-webkit-scrollbar {
+    display: none;
+}
+
+#task-columns .column .card-header-title {
+    font-weight: bold;
+    color: #333333;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.column[data-status="Backlog"],
+.column[data-status="To Do"],
+.column[data-status="In Progress"],
+.column[data-status="Blocked"],
+.column[data-status="Done"] {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.task-card {
+    cursor: grab;
+    margin-top: 1rem;
+}
+
+.task-card:active {
+    cursor: grabbing;
+    border-radius: 0;
+}
+
+.task-card .card-content {
+    padding: 0.8rem;
+    border-radius: 8px;
+}
+
+.task-card .card-content .title {
+    margin-bottom: 0.5rem;
+    color: black;
+    font-size: 0.9rem;
+}
+
+.task-card .card-content .subtitle {
+    margin: 0;
+    line-height: 1.2;
+    color: black;
+    font-size: 0.8rem;
+}
+
+.task-card .card-content p {
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    font-size: 0.8rem;
+}
+
+.column[ondragover] {
+    border: 2px dashed #ccc;
+}
+
+.task-backlog {
+    background-color: #c8c8c8;
+}
+
+.task-todo {
+    background-color: #f6da87;
+}
+
+.task-inprogress {
+    background-color: #4dbff4;
+}
+
+.task-blocked {
+    background-color: #f79494;
+}
+
+.task-done {
+    background-color: #60d264;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+    #task-columns .column {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+
+    #task-columns .column:nth-child(4),
+    #task-columns .column:nth-child(5) {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    #task-columns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #task-columns .column {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
