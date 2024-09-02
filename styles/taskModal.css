@@ -1,3 +1,4 @@
+
 .modal-card-head {
     justify-content: center;
     text-align: center;
@@ -40,7 +41,21 @@
     width: 100%;
     padding: 0.375rem 0.75rem;
 }
-
+  
+  @media screen and (min-width: 1440px) {
+    #task-columns {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      #task-columns .column {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        white-space: normal; 
+      }
+  }
+  
 @media (max-width: 768px) {
     .modal {
         width: 100%;
