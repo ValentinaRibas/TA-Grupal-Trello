@@ -8,6 +8,9 @@ export class TaskColumns {
         this.renderColumns();
     }
 
+    /**
+     * Renderizes the columns in the container element
+     */
     renderColumns() {
         this.containerElement.innerHTML = "";
         this.taskStatuses.forEach(status => {
@@ -17,6 +20,11 @@ export class TaskColumns {
         this.loadTasksToColumns();
     }
 
+    /**
+     * Creates a column div element
+     * @param {*} status the status of the column
+     * @returns the column div element
+     */
     createColumn(status) {
         const columnDiv = document.createElement("div");
         columnDiv.classList.add("column", "is-one-fifth");
@@ -35,6 +43,9 @@ export class TaskColumns {
         return columnDiv;
     }
 
+    /**
+     * Loads the tasks to the columns
+     */
     loadTasksToColumns() {
         this.taskStatuses.forEach(status => {
             const columnContent = document.getElementById(`column-${status.replace(/\s+/g, "")}`);
@@ -55,6 +66,11 @@ export class TaskColumns {
         });
     }
 
+    /**
+     * Creates a task div element and includes the drag and drop events
+     * @param {*} task the task to create the element
+     * @returns the task div element
+     */
     createTaskElement(task) {
         const taskDiv = document.createElement("div");
         taskDiv.classList.add("card", "mb-3", "task-card", `task-${task.status.replace(/\s+/g, "").toLowerCase()}`);
@@ -62,6 +78,7 @@ export class TaskColumns {
         taskDiv.draggable = true;
         taskDiv.ondragstart = (event) => this.drag(event);
     
+        // Sets the priority color
         let priorityColor;
         switch(task.priority.toLowerCase()) {
             case "alta":
@@ -86,6 +103,7 @@ export class TaskColumns {
             </div>
         `;
     
+        // Opens the modal to edit the task
         taskDiv.addEventListener("click", () => {
             const taskToEdit = this.tasks.find(t => t.id === task.id);
             this.modal.openModal("Editar Tarea", taskToEdit); 
@@ -94,19 +112,33 @@ export class TaskColumns {
         return taskDiv;
     }
 
+    /**
+     * Sets the task id to the dataTransfer object
+     * @param {*} event the drag event
+     * @returns the task id
+     */
     drag(event) {
         event.dataTransfer.setData("text", event.target.dataset.taskId);
     }
 
+    /**
+     * Allows the drop event
+     * @param {*} event the dragover event
+     */
     allowDrop(event) {
         event.preventDefault();
     }
 
+    /**
+     * Drops the task in the new column
+     * @param {*} event the drop event
+     */
     drop(event) {
         event.preventDefault();
         const taskId = event.dataTransfer.getData("text");
         const newStatus = event.currentTarget.dataset.status;
 
+        // Updates the task status
         const taskToUpdate = this.tasks.find(task => task.id === taskId);
         taskToUpdate.status = newStatus;
 
