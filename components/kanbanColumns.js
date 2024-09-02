@@ -21,7 +21,18 @@ export class TaskColumns {
         const columnDiv = document.createElement("div");
         columnDiv.classList.add("column", "is-one-fifth");
         columnDiv.dataset.status = status;
-        columnDiv.innerHTML = `
+        if(document.getElementById("dark-mode-button").textContent === "Dark Mode: ON"){
+            columnDiv.innerHTML = `
+            <div class="column dark-mode-columnas" id="columnas-${status.replace(/\s+/g, "")}">
+                <header class="card-header">
+                    <p class="card-header-title">${status}</p>
+                </header>
+                <div class="card-content" id="column-${status.replace(/\s+/g, "")}" ondrop="event.stopPropagation(); return false;">
+                </div>
+            </div>
+        `;
+        }else{
+            columnDiv.innerHTML = `
             <div class="column" id="columnas-${status.replace(/\s+/g, "")}">
                 <header class="card-header">
                     <p class="card-header-title">${status}</p>
@@ -30,6 +41,7 @@ export class TaskColumns {
                 </div>
             </div>
         `;
+        }
         columnDiv.addEventListener("dragover", this.allowDrop);
         columnDiv.addEventListener("drop", (event) => this.drop(event));
         return columnDiv;
