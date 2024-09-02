@@ -10,8 +10,7 @@
 #task-columns .column {
   flex: 1 1 16%;
   border-radius: 15px;
-  height: 600px;
-  min-height: 800px;
+  min-height: 400px;
 }
 
 #task-columns .column .card-content {
@@ -142,5 +141,18 @@
     flex: 1 1 100%;
     max-width: 100%;
     margin-right: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  #task-columns {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 20px;
+  }
+
+  #task-columns .column {
+    flex: 0 0 calc(100% / 3); 
   }
 }
