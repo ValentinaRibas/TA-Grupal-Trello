@@ -20,4 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("new-task-button").addEventListener("click", () => {
         taskModal.openModal("Nueva Tarea");
     });
+
+    const themeSwitch = document.getElementById("dark-mode-switch");
+    const htmlElement = document.documentElement;
+
+    themeSwitch.addEventListener("change", () => {
+        if (themeSwitch.checked) {
+            htmlElement.setAttribute("data-theme", "dark");
+        } else {
+            htmlElement.setAttribute("data-theme", "light");
+        }
+    });
+
+    if (htmlElement.getAttribute("data-theme") === "dark") {
+        themeSwitch.checked = true;
+    }
 });

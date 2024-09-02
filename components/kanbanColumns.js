@@ -48,9 +48,9 @@ export class TaskColumns {
             });
 
             if (columnContent.scrollHeight > columnContent.clientHeight) {
-                columnContent.parentElement.classList.add('scrollable');
+                columnContent.parentElement.classList.add("scrollable");
             } else {
-                columnContent.parentElement.classList.remove('scrollable');
+                columnContent.parentElement.classList.remove("scrollable");
             }
         });
     }
@@ -61,19 +61,36 @@ export class TaskColumns {
         taskDiv.dataset.taskId = task.id;
         taskDiv.draggable = true;
         taskDiv.ondragstart = (event) => this.drag(event);
+    
+        let priorityColor;
+        switch(task.priority.toLowerCase()) {
+            case "alta":
+                priorityColor = "red";
+                break;
+            case "media":
+                priorityColor = "#e4be00";
+                break;
+            case "baja":
+                priorityColor = "green";
+                break;
+            default:
+                priorityColor = "gray";
+        }
+    
         taskDiv.innerHTML = `
+            <div class="priority-indicator" style="background-color: ${priorityColor};"></div>
             <div class="card-content">
                 <p class="title is-5">${task.title}</p>
-                <p class="subtitle is-6">Prioridad: ${task.priority}</p>
-                <p class="subtitle is-6">Asignado a: ${task.assigned}</p>
+                <p class="description is-7">${task.description}</p>
+                <p class="assigned is-6">${task.assigned}</p>
             </div>
         `;
-
+    
         taskDiv.addEventListener("click", () => {
             const taskToEdit = this.tasks.find(t => t.id === task.id);
             this.modal.openModal("Editar Tarea", taskToEdit); 
         });
-
+    
         return taskDiv;
     }
 
