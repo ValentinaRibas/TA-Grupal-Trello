@@ -1,3 +1,8 @@
+.modal-card {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
 .modal-card-head {
   justify-content: center;
   text-align: center;
@@ -30,11 +35,6 @@
   color: white;
   font-weight: bold;
   background-color: #8a4242;
-}
-
-.modal-card {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .modal-card .field .control {
