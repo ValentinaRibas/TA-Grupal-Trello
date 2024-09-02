@@ -20,6 +20,32 @@ body {
     top: 20px; */
 }
 
+.dark-mode-button {
+    background-color: #9fbeb9;
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* position: absolute;
+    right: 20px;
+    top: 20px; */
+}
+
+.tituloGestorDarkMode{
+    color: #e0e0e0;
+}
+
+.dark-mode {
+    background-color: #1d1d1e;
+    color: #e0e0e0;
+  }
+
+.dark-mode-columnas {
+    background-color: #06061b;
+    color: #e0e0e0;
+}
+
 .container {
     position: relative;
 }

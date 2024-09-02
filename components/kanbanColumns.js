@@ -22,7 +22,7 @@ export class TaskColumns {
         columnDiv.classList.add("column", "is-one-fifth");
         columnDiv.dataset.status = status;
         columnDiv.innerHTML = `
-            <div class="column">
+            <div class="column" id="columnas-${status.replace(/\s+/g, "")}">
                 <header class="card-header">
                     <p class="card-header-title">${status}</p>
                 </header>
@@ -34,6 +34,8 @@ export class TaskColumns {
         columnDiv.addEventListener("drop", (event) => this.drop(event));
         return columnDiv;
     }
+
+    
 
     loadTasksToColumns() {
         this.taskStatuses.forEach(status => {

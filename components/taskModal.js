@@ -12,6 +12,8 @@ export class TaskModal {
         this.saveTaskButton.addEventListener("click", this.saveTask.bind(this));
         this.cancelModalButton.addEventListener("click", this.closeModal.bind(this));
     }
+    
+    
 
     openModal(title, task = null) {
         this.modalTitle.textContent = title;
