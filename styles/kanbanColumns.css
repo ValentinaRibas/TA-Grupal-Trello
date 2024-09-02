@@ -10,7 +10,6 @@ body {
 
 #new-task-button {
     background-color: #00d1b2;
-    color: rgb(39, 39, 39);
     font-weight: bold;
     border-radius: 5px;
     padding: 10px 20px;
@@ -130,7 +129,7 @@ body {
 }
 
 .task-done {
-    background-color: #60d264;
+    background-color: #459d48;
 }
 
 @media (min-width: 768px) and (max-width: 1440px) {

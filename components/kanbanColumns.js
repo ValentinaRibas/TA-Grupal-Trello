@@ -48,9 +48,9 @@ export class TaskColumns {
             });
 
             if (columnContent.scrollHeight > columnContent.clientHeight) {
-                columnContent.parentElement.classList.add('scrollable');
+                columnContent.parentElement.classList.add("scrollable");
             } else {
-                columnContent.parentElement.classList.remove('scrollable');
+                columnContent.parentElement.classList.remove("scrollable");
             }
         });
     }

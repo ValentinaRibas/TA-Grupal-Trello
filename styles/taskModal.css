@@ -2,6 +2,8 @@
     justify-content: center;
     text-align: center;
     position: relative;
+    box-shadow: none;
+    border-bottom: 1px solid #464747;
 }
 
 .modal-card-head .delete {
@@ -10,11 +12,27 @@
 
 .modal-card-foot {
     justify-content: center;
+    gap: 20px;
 }
 
 .modal-card-foot .button {
-    margin-left: 10px;
+    width: 150px;
+    border: none;
 }
+
+#save-task{
+    color: white;
+    font-weight: bold;
+    /* border: 2px solid #3f785a; */
+    background-color: #3f785a;
+}
+
+#cancel-modal{
+    color: white;
+    font-weight: bold;
+    /* border: 2px solid #6b3333; */
+    background-color: #8a4242;
+}   
 
 .modal-card {
     max-width: 800px;
